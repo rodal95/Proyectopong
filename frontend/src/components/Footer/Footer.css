@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-direction: column  ;
+    justify-content: center;
+
+}
+.social-media-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+
+}
+li svg{
+    color: white;
+}
+.textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 1rem;
+    text-align: center;
+
+}
+footer{
+    background-color: rgb(211, 40, 40) !important;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+.container-home{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 35px 35px;
+    background-color: #f1e8e8;
+    color: red;
+    height: 700px;
+}
+.text-home {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+  color: red;
+  align-self: center;
+  text-align: left;
+  width: 600px;
+}

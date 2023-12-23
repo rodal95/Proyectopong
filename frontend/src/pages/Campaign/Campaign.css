@@ -1,0 +1,28 @@
+
+.container-campaign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.text-campaign {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+  color: red;
+  align-self: center;
+  text-align: left;
+  width: 600px;
+}
+.image-campaign{
+    margin-top:20px ;
+    margin-left: 20px;
+}
+.image-campaign img{
+    width: 600px;
+    margin-top:20px ;
+    margin-left: 20px;
+}
