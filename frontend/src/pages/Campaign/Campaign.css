@@ -26,3 +26,9 @@
     margin-top:20px ;
     margin-left: 20px;
 }
+.campaigns {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben en el ancho disponible */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: flex-start; /* Alinea las tarjetas al principio del contenedor */
+  }
