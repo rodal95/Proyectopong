@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from rest_framework import viewsets
 from .serializer import ClienteSerializer
 from .models import Cliente
+from carritos.models import Carrito
 from rest_framework.response import Response
 from rest_framework import status
 import jwt
@@ -20,6 +21,7 @@ class ClienteView(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            Carrito.objects.create(cliente_id=serializer.data['id'], abierto=1)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -34,13 +36,13 @@ class ClienteView(viewsets.ModelViewSet):
             return JsonResponse({'message': 'Usuario no encontrado'}, status=404)
 
     def login(self, request):
-        email = request.data.get('correo')
-        password = request.data.get('contraseña')
+        email = request.data.get('email')
+        password = request.data.get('password')
         try:
             user = Cliente.objects.get(correo=email)
             if check_password(password, user.contraseña):
                 response = HttpResponse()
-                token_payload = {'user_id': user.id, 'username': user.correo,'exp': datetime.utcnow() + timedelta(hours=1) }
+                token_payload = {'user_id': user.id, 'username': user.correo,'exp': datetime.utcnow() + timedelta(hours=24) }
                 token = jwt.encode(token_payload, settings.SECRET_KEY, algorithm='HS256')
                 token_str = token
                 return JsonResponse({'token': token_str.decode('utf-8'), 'message': 'Inicio de sesión exitoso'})

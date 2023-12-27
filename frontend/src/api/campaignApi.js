@@ -15,3 +15,4 @@ export const getCampaigns = async () => {
         console.error(error);
     }
 }
+

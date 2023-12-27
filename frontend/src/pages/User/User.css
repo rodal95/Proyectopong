@@ -1,0 +1,31 @@
+.user-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .user-info {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-info th {
+    text-align: left;
+    padding: 8px;
+    background-color: #f2f2f2;
+  }
+  
+  .user-info td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-info tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .user-info tr:hover {
+    background-color: #f2f2f2;
+  }
+  
